@@ -2,8 +2,6 @@ package models
 
 import (
 	"time"
-
-	envmanModels "github.com/bitrise-io/envman/models"
 )
 
 // StepSourceModel ...
@@ -102,8 +100,8 @@ type StepModel struct {
 	Timeout *int                   `json:"timeout,omitempty" yaml:"timeout,omitempty"`
 	Meta    map[string]interface{} `json:"meta,omitempty" yaml:"meta,omitempty"`
 	//
-	Inputs  []envmanModels.EnvironmentItemModel `json:"inputs,omitempty" yaml:"inputs,omitempty"`
-	Outputs []envmanModels.EnvironmentItemModel `json:"outputs,omitempty" yaml:"outputs,omitempty"`
+	Inputs  []EnvironmentItemModel `json:"inputs,omitempty" yaml:"inputs,omitempty"`
+	Outputs []EnvironmentItemModel `json:"outputs,omitempty" yaml:"outputs,omitempty"`
 }
 
 // StepVersionModel ...

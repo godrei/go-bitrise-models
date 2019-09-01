@@ -2,9 +2,6 @@ package models
 
 import (
 	"time"
-
-	envmanModels "github.com/bitrise-io/envman/models"
-	stepmanModels "github.com/bitrise-io/stepman/models"
 )
 
 const (
@@ -24,27 +21,27 @@ const (
 )
 
 // StepListItemModel ...
-type StepListItemModel map[string]stepmanModels.StepModel
+type StepListItemModel map[string]StepModel
 
 // WorkflowModel ...
 type WorkflowModel struct {
-	Title        string                              `json:"title,omitempty" yaml:"title,omitempty"`
-	Summary      string                              `json:"summary,omitempty" yaml:"summary,omitempty"`
-	Description  string                              `json:"description,omitempty" yaml:"description,omitempty"`
-	BeforeRun    []string                            `json:"before_run,omitempty" yaml:"before_run,omitempty"`
-	AfterRun     []string                            `json:"after_run,omitempty" yaml:"after_run,omitempty"`
-	Environments []envmanModels.EnvironmentItemModel `json:"envs,omitempty" yaml:"envs,omitempty"`
-	Steps        []StepListItemModel                 `json:"steps,omitempty" yaml:"steps,omitempty"`
-	Meta         map[string]interface{}              `json:"meta,omitempty" yaml:"meta,omitempty"`
+	Title        string                 `json:"title,omitempty" yaml:"title,omitempty"`
+	Summary      string                 `json:"summary,omitempty" yaml:"summary,omitempty"`
+	Description  string                 `json:"description,omitempty" yaml:"description,omitempty"`
+	BeforeRun    []string               `json:"before_run,omitempty" yaml:"before_run,omitempty"`
+	AfterRun     []string               `json:"after_run,omitempty" yaml:"after_run,omitempty"`
+	Environments []EnvironmentItemModel `json:"envs,omitempty" yaml:"envs,omitempty"`
+	Steps        []StepListItemModel    `json:"steps,omitempty" yaml:"steps,omitempty"`
+	Meta         map[string]interface{} `json:"meta,omitempty" yaml:"meta,omitempty"`
 }
 
 // AppModel ...
 type AppModel struct {
-	Title        string                              `json:"title,omitempty" yaml:"title,omitempty"`
-	Summary      string                              `json:"summary,omitempty" yaml:"summary,omitempty"`
-	Description  string                              `json:"description,omitempty" yaml:"description,omitempty"`
-	Environments []envmanModels.EnvironmentItemModel `json:"envs,omitempty" yaml:"envs,omitempty"`
-	Meta         map[string]interface{}              `json:"meta,omitempty" yaml:"meta,omitempty"`
+	Title        string                 `json:"title,omitempty" yaml:"title,omitempty"`
+	Summary      string                 `json:"summary,omitempty" yaml:"summary,omitempty"`
+	Description  string                 `json:"description,omitempty" yaml:"description,omitempty"`
+	Environments []EnvironmentItemModel `json:"envs,omitempty" yaml:"envs,omitempty"`
+	Meta         map[string]interface{} `json:"meta,omitempty" yaml:"meta,omitempty"`
 }
 
 // TriggerEventType ...
@@ -117,13 +114,13 @@ type BuildRunResultsModel struct {
 
 // StepRunResultsModel ...
 type StepRunResultsModel struct {
-	StepInfo  stepmanModels.StepInfoModel `json:"step_info" yaml:"step_info"`
-	Status    int                         `json:"status" yaml:"status"`
-	Idx       int                         `json:"idx" yaml:"idx"`
-	RunTime   time.Duration               `json:"run_time" yaml:"run_time"`
-	StartTime time.Time                   `json:"start_time" yaml:"start_time"`
-	ErrorStr  string                      `json:"error_str" yaml:"error_str"`
-	ExitCode  int                         `json:"exit_code" yaml:"exit_code"`
+	StepInfo  StepInfoModel `json:"step_info" yaml:"step_info"`
+	Status    int           `json:"status" yaml:"status"`
+	Idx       int           `json:"idx" yaml:"idx"`
+	RunTime   time.Duration `json:"run_time" yaml:"run_time"`
+	StartTime time.Time     `json:"start_time" yaml:"start_time"`
+	ErrorStr  string        `json:"error_str" yaml:"error_str"`
+	ExitCode  int           `json:"exit_code" yaml:"exit_code"`
 }
 
 // TestResultStepInfo ...
