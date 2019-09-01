@@ -1,7 +1,7 @@
 package models
 
-// EnvironmentItemOptionsModel ...
-type EnvironmentItemOptionsModel struct {
+// VariableOptions ...
+type VariableOptions struct {
 	// These fields are processed by envman at envman run
 	IsExpand    *bool `json:"is_expand,omitempty" yaml:"is_expand,omitempty"`
 	SkipIfEmpty *bool `json:"skip_if_empty,omitempty" yaml:"skip_if_empty,omitempty"`
@@ -20,13 +20,10 @@ type EnvironmentItemOptionsModel struct {
 	Meta map[string]interface{} `json:"meta,omitempty" yaml:"meta,omitempty"`
 }
 
-// EnvironmentItemModel ...
-type EnvironmentItemModel map[string]interface{}
+// Variable ...
+type Variable map[string]interface{}
 
-// EnvsSerializeModel ...
-type EnvsSerializeModel struct {
-	Envs []EnvironmentItemModel `json:"envs" yaml:"envs"`
+// VariableStore ...
+type VariableStore struct {
+	Envs []Variable `json:"envs" yaml:"envs"`
 }
-
-// EnvsJSONListModel ...
-type EnvsJSONListModel map[string]string
